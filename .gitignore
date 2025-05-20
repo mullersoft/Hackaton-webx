@@ -14,4 +14,4 @@
 /backend/node_modules/
 /backend/dist/
 /backend/build/
-/backend/.env*
+/backend/config.env*

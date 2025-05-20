@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 app.use(express.json());
@@ -17,26 +18,9 @@ mongoose
     console.log("DB connection failed", err);
   });
 
-//Middlewares
-app.use((req, res, next) => {
-  console.log(" this is middleware ✔");
-  next();
-});
-console.log(process.env);
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-app.post("/", (req, res) => {
-  console.log(req.body);
-  res.send("Hello World!");
-});
+//Routes
+app.use("/", userRoutes);
 
-app.patch("/apiPatch", (req, res) => {
-  res.json({ message: "patch api!" });
-});
-app.delete("/apiDelete", (req, res) => {
-  res.json({ message: "delete api!" });
-});
 port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
