@@ -19,26 +19,35 @@ Follow the steps below to set up and run the project locally.
 git clone https://github.com/mullersoft/Hackaton-webx.git
 ```
 
-2. Install dependencies
+## 2. Install dependencies
    Backend
-
+```bash
 cd backend
 npm install
+```
+  
 Frontend
-
-cd ../frontend
+```bash
+cd frontend
 npm install
-▶️ Running the Application
+```
+## Running the Application
 Start the Backend Server
 
+```bash
 cd backend
 npm run dev
+```
 The backend server should start (typically on port 3001 or as configured).
 
 Start the Frontend Application
 
+```bash
 cd frontend
 npm start
+```
 The frontend app will run at http://localhost:3000
+The backend app will run at http://localhost:5000
+
 
 Feel free to fork the repository, make changes, and submit a pull request.
