@@ -1,0 +1,17 @@
+# Global ignores
+.DS_Store
+.vscode/
+.idea/
+*.log
+*.swp
+
+# Frontend
+/frontend/node_modules/
+/frontend/build/
+/frontend/.env*
+
+# Backend
+/backend/node_modules/
+/backend/dist/
+/backend/build/
+/backend/.env*
