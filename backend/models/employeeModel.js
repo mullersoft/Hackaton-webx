@@ -35,7 +35,7 @@ const employeeSchema = new mongoose.Schema({
     required: true,
   },
   empDate: {
-    type:Date,
+    type:String,
     required: true,
   },
   basicSalary:{

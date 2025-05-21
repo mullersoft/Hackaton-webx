@@ -6,6 +6,8 @@ const positionRoutes = require("./routes/postionRoutes");
 const employeeRoute = require("./routes/employeeRoutes");
 const employerRoute = require("./routes/employerRoutes");
 const allowanceRoutes = require("./routes/allowanceRoutes");
+const payrollRoutes = require("./routes/payrollRoutes");
+
 
 
 const cors = require("cors");
@@ -31,6 +33,8 @@ app.use("/api", positionRoutes);
 app.use("/api", employeeRoute);
 app.use("/api", employerRoute);
 app.use("/api", allowanceRoutes);
+app.use("/api", payrollRoutes);
+
 
 
 

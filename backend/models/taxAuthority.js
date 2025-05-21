@@ -13,7 +13,7 @@ const taxAuthoritySchema = new mongoose.Schema({
     type:Number,
     required:true,
     default:0,
-  }
+  },
    employeerId: {
     type:mongoose.Schema.Types.ObjectId,ref:"Employeer",
     required: true,
