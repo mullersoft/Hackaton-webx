@@ -3,7 +3,11 @@ const User = require("../models/userModel");
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
-    res.json(users);
+    res.json({
+      status: "success",
+      result: users.length,
+      data: { users },
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -14,7 +18,7 @@ exports.getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ message: "User not found" });
-    res.json(user);
+    res.json({ status: "success", data: { user } });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -26,7 +30,7 @@ exports.createUser = async (req, res) => {
   const user = new User(req.body);
   try {
     const newUser = await user.save();
-    res.status(201).json(newUser);
+    res.status(201).json({ status: "succes", data: { newUser } });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -41,7 +45,7 @@ exports.updateUser = async (req, res) => {
     });
     if (!updatedUser)
       return res.status(404).json({ message: "User not found" });
-    res.json(updatedUser);
+    res.json({ status: "success", data: { updatedUser } });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
