@@ -2,7 +2,12 @@ const Employee = require("../models/employeeModel");
 // Get all users
 exports.getAllEmployee = async (req, res) => {
   try {
-    const employee = await Employee.find();
+    const employee = await Employee.find().populate({
+      path: 'AllowanceId',
+      select:'allowance',strictPopulate:false
+    }).populate({path:"positionId",
+        select:'positionType',
+        strictPopulate:false});
     res.json({
       status: "success",
       result: employee.length,

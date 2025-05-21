@@ -20,7 +20,7 @@ const employeeSchema = new mongoose.Schema({
      default:'Full-time',
     required: true,
   },
- workingDay: {
+ workingDays: {
     type: Number,
     required: true,
     
@@ -35,7 +35,7 @@ const employeeSchema = new mongoose.Schema({
     required: true,
   },
   empDate: {
-    type:String,
+    type:Date,
     required: true,
   },
   basicSalary:{

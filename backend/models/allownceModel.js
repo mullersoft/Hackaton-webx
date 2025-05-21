@@ -1,18 +1,10 @@
 const mongoose = require("mongoose");
 
 const allowanceSchema = new mongoose.Schema({
-    possionAllowance: { type: Number, required: true },
-    transportAllowance: { type: Number, required: true },
-    otherCommission: { type: Number, required: true },
-    
+    possionAllowance: { type: Number, required: true,default:5000 },
+    transportAllowance: { type: Number, required: true,default:2200 },
+    otherCommission: { type: Number, required: true,default:600 },
 
-
-
-
-//   allowance: {
-//     type: String,
-//     enum:["possion-Allowance","transport-allowance","other/commission"],
-//   },
   });
 
 
