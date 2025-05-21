@@ -1,14 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const userRoutes = require("./routes/userRoutes");
 const positionRoutes = require("./routes/postionRoutes");
 const employeeRoute = require("./routes/employeeRoutes");
 const employerRoute = require("./routes/employerRoutes");
 const allowanceRoutes = require("./routes/allowanceRoutes");
 const payrollRoutes = require("./routes/payrollRoutes");
-
-
 
 const cors = require("cors");
 
@@ -28,17 +25,11 @@ mongoose
 //cors
 app.use(cors());
 //Routes
-app.use("/", userRoutes);
 app.use("/api", positionRoutes);
 app.use("/api", employeeRoute);
 app.use("/api", employerRoute);
 app.use("/api", allowanceRoutes);
 app.use("/api", payrollRoutes);
-
-
-
-
-
 
 port = process.env.PORT || 5000;
 app.listen(port, () => {

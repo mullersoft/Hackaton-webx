@@ -8,13 +8,13 @@ const employeerSchema = new mongoose.Schema({
     trim: true,
     minlength: 3,
   },
-  accountNumber:{
-    type:String,
-    require:true,
+  accountNumber: {
+    type: String,
+    require: true,
   },
-  balance:{
-    type:Number,
-    default:100000,
+  balance: {
+    type: Number,
+    default: 100000,
   },
   createdAt: {
     type: Date,
@@ -23,13 +23,3 @@ const employeerSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Employeer", employeerSchema);
-
-
-// onst employerSchema = new mongoose.Schema({
-//   name: { type: String, required: true },
-//   organizationType: String,
-//   industry: String,
-//   contactEmail: String
-// });
-
-// export default mongoose.model('Employer', employerSchema);
